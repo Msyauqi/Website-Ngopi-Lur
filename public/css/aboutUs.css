@@ -1,0 +1,230 @@
+:root {
+  --primary: #684725;
+  --bg: #010101;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  color: #fff;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem, 7%;
+  background-color: rgb(1, 1, 1, 0.8);
+  border-bottom: 1.5px solid #573e24;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #f8e4cf;
+  font-style: italic;
+  padding-left: 2rem;
+}
+
+.navbar .navbar-logo span {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a {
+  color: white;
+  display: inline-block;
+  font-size: 1.3rem;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-ext {
+  padding-right: 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.2rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navbar .navbar-ext a {
+  color: #fff;
+  margin: 0 0.4rem;
+}
+
+.navbar .navbar-ext a:hover {
+  color: var(--primary);
+}
+
+
+
+button {
+  position: relative;
+  border: none;
+  transition: 0.4s ease-in;
+  z-index: 1;
+}
+
+button::before,
+button::after {
+  position: absolute;
+  content: "";
+  z-index: -1;
+}
+
+.aboutbtn {
+  width: 8rem;
+  display: block;
+  margin: 0 auto;
+  margin-top: 3rem;
+  padding: 1rem 1rem;
+  font-size: 1rem;
+  background-color: var(--primary);
+  color: #f8e4cf;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.aboutbtn:hover {
+  width: 8rem;
+  display: block;
+  margin: 0 auto;
+  margin-top: 3rem;
+  padding: 1rem 1rem;
+  font-size: 1rem;
+  background-color: #f8e4cf;
+  color: var(--primary);
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.about {
+  padding: 1rem 6% 1rem;
+}
+
+.about h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2.7rem;
+  color: var(--primary);
+}
+
+.about h2 span {
+  color: #f8e4cf;
+}
+
+.about .row {
+  display: flex;
+}
+
+.about .row .about-img {
+  flex: 1 1 42rem;
+}
+
+.about .row .about-img img {
+  width: 100%;
+  border-radius: 1%;
+}
+
+.about .row .content {
+  flex: 1 1 32;
+  padding: 0 1rem;
+}
+
+.about .row h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.about .row .content p {
+  margin-bottom: 0.3rem;
+  font-size: 1.2rem;
+  font-weight: 100;
+  line-height: 1.6;
+}
+
+footer {
+  background-color: var(--primary);
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+  padding-bottom: 3.5rem;
+}
+
+footer .social {
+  padding: 1rem 0;
+}
+
+footer .social a {
+  color: #fff;
+  margin: 1rem;
+  font-size: 2rem;
+}
+
+footer .social a:hover,
+footer .link a:hover {
+  color: #222;
+}
+
+footer .link {
+  margin-bottom: 1rem;
+}
+footer .link a {
+  color: #fff;
+  padding: 0.7rem 1rem;
+}
+
+footer .credit {
+  font-size: 2rem;
+}
+
+footer .credit a {
+  color: #222;
+  font-weight: 700;
+}
+
+.foto .row img {
+  display: flexbox;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  justify-content: center;
+  height: 18.5rem;
+}
+
+.foto h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2.7rem;
+  color: var(--primary);
+}
+
+.foto h2 span {
+  color: #f8e4cf;
+}

@@ -1,0 +1,203 @@
+:root {
+  --primary: #684725;
+  --bg: #010101;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  color: #fff;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem, 7%;
+  background-color: rgb(1, 1, 1, 0.8);
+  border-bottom: 1.5px solid #573e24;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #f8e4cf;
+  font-style: italic;
+  padding-left: 2rem;
+}
+
+.navbar .navbar-logo span {
+  color: var(--primary);
+}
+
+.navbar .navbar-ext {
+  padding-right: 1rem;
+}
+
+.navbar .navbar-ext a {
+  color: #fff;
+  margin: 0 0.4rem;
+}
+
+.navbar .navbar-ext a:hover {
+  color: var(--primary);
+}
+
+button {
+  position: relative;
+  border: none;
+  transition: 0.4s ease-in;
+  z-index: 1;
+}
+
+button::before,
+button::after {
+  position: absolute;
+  content: "";
+  z-index: -1;
+}
+
+.menubtn {
+  width: 8rem;
+  display: block;
+  margin: 0 auto;
+  margin-top: 3rem;
+  padding: 1rem 1rem;
+  font-size: 1rem;
+  background-color: var(--primary);
+  color: #f8e4cf;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.menubtn:hover {
+  width: 8rem;
+  display: block;
+  margin: 0 auto;
+  margin-top: 3rem;
+  padding: 1rem 1rem;
+  font-size: 1rem;
+  background-color: #f8e4cf;
+  color: var(--primary);
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.menuKami {
+  padding: 5rem 6% 1rem;
+}
+
+.menuKami h2,
+.menuKami h5 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2.7rem;
+  color: var(--primary);
+}
+
+.menuKami h5 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2.7rem;
+  color: var(--primary);
+}
+
+.menu-makanan {
+  margin-top: 4rem;
+}
+
+.menuKami h2 span {
+  color: #f8e4cf;
+}
+
+.menuKami h2 {
+  margin-bottom: 1rem;
+}
+
+.menuKami p {
+  text-align: center;
+  max-width: 28rem;
+  margin: auto;
+  font-weight: 100;
+  line-height: 1.6;
+}
+
+.menuKami .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.menuKami .row .menu-card {
+  text-align: center;
+  padding: 1rem;
+}
+
+.menuKami .row .menu-card img {
+  border-radius: 50%;
+  width: 90%;
+}
+
+.menuKami .row p {
+  font-size: 1.3rem;
+}
+
+.menuKami .row .menu-card .menu-card-title {
+  margin: 1rem auto 0.5rem;
+  font-size: 1.5rem;
+}
+
+footer {
+    background-color: var(--primary);
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    padding-bottom: 3.5rem;
+  }
+  
+  footer .social {
+    padding: 1rem 0;
+  }
+  
+  footer .social a {
+    color: #fff;
+    margin: 1rem;
+    font-size: 2rem;
+  }
+  
+  footer .social a:hover,
+  footer .link a:hover {
+    color: #222;
+  }
+  
+  footer .link {
+    margin-bottom: 1rem;
+  }
+  footer .link a {
+    color: #fff;
+    padding: 0.7rem 1rem;
+  }
+  
+  footer .credit {
+    font-size: 2rem;
+  }
+  
+  footer .credit a {
+    color: #222;
+    font-weight: 700;
+  }

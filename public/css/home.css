@@ -1,0 +1,496 @@
+:root {
+  --primary: #684725;
+  --bg: #010101;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  color: #fff;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem, 7%;
+  background-color: rgb(1, 1, 1, 0.8);
+  border-bottom: 1.5px solid #573e24;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #f8e4cf;
+  font-style: italic;
+  padding-left: 2rem;
+}
+
+.navbar .navbar-logo span {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a {
+  color: white;
+  display: inline-block;
+  font-size: 1.3rem;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-ext {
+  padding-right: 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.2rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navbar .navbar-ext a {
+  color: #fff;
+  margin: 0 0.4rem;
+}
+
+.navbar .navbar-ext a:hover {
+  color: var(--primary);
+}
+
+#menu {
+  display: none;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url(../img/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(1, 1, 3, 1) 8%,
+    rgba(255, 255, 255, 0) 50%
+  );
+}
+
+.hero .content {
+  padding: 1.2rem 7%;
+  max-width: 45rem;
+}
+
+.ngopi {
+  font-size: 2.5em;
+  color: #f8e4cf;
+  text-shadow: 1px 1px 3px rgba(1, 1, 1, 0.5);
+}
+
+.lur {
+  font-size: 2.5em;
+  color: var(--primary);
+  text-shadow: 1px 1px 3px rgba(1, 1, 1, 0.5);
+}
+
+.kata {
+  font-size: 2.5em;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(1, 1, 1, 0.5);
+  line-height: 1.2;
+}
+
+.hero .content p {
+  font-size: 1rem;
+  margin-top: 1rem;
+  line-height: 1.3;
+  font-weight: 100;
+  text-shadow: 1px 1px 3px rgba(1, 1, 1, 0.5);
+  mix-blend-mode: difference;
+}
+
+.about,
+.menuKami,
+.contact {
+  padding: 5rem 6% 1rem;
+}
+
+.about h2,
+.menuKami h2,
+.menuKami h5,
+.contact h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2.7rem;
+  color: var(--primary);
+}
+
+.menuKami h5 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2.7rem;
+  color: var(--primary);
+}
+
+.menu-makanan {
+  margin-top: 4rem;
+}
+
+.about h2 span,
+.menuKami h2 span,
+.contact h2 span {
+  color: #f8e4cf;
+}
+
+.about .row {
+  display: flex;
+}
+
+.about .row .about-img {
+  flex: 1 1 42rem;
+}
+
+.about .row .about-img img {
+  width: 100%;
+  border-radius: 1%;
+}
+
+.about .row .content {
+  flex: 1 1 32;
+  padding: 0 1rem;
+}
+
+.about .row h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.about .row .content p {
+  margin-bottom: 0.3rem;
+  font-size: 1.2rem;
+  font-weight: 100;
+  line-height: 1.6;
+}
+
+.menuKami h2,
+.contact h2 {
+  margin-bottom: 1rem;
+}
+.menuKami p,
+.contact p {
+  text-align: center;
+  max-width: 28rem;
+  margin: auto;
+  font-weight: 100;
+  line-height: 1.6;
+}
+
+.menuKami .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.menuKami .row .menu-card {
+  text-align: center;
+  padding: 1rem;
+}
+
+.menuKami .row .menu-card img {
+  border-radius: 50%;
+  width: 90%;
+}
+
+.menuKami .row p {
+  font-size: 1.3rem;
+}
+
+.menuKami .row .menu-card .menu-card-title {
+  margin: 1rem auto 0.5rem;
+  font-size: 1.5rem;
+}
+
+.contact .row {
+  display: flex;
+  margin-top: 2rem;
+  background-color: #222;
+}
+
+.contact .row .map {
+  flex: 1 1 45rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.contact .row form {
+  flex: 1 1 45rem;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.contact .row form .input-group {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  background-color: var(--bg);
+  border: 1px solid #eee;
+  padding-left: 2rem;
+}
+
+.contact .row form .input-group input {
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.5rem;
+  background: none;
+  color: #fff;
+}
+
+.contact .row form .btn {
+  margin-top: 3rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.7rem;
+  background-color: var(--primary);
+  color: #f8e4cf;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+footer {
+  background-color: var(--primary);
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+  padding-bottom: 3.5rem;
+}
+
+footer .social {
+  padding: 1rem 0;
+}
+
+footer .social a {
+  color: #fff;
+  margin: 1rem;
+  font-size: 2rem;
+}
+
+footer .social a:hover,
+footer .link a:hover {
+  color: #222;
+}
+
+footer .link {
+  margin-bottom: 1rem;
+}
+footer .link a {
+  color: #fff;
+  padding: 0.7rem 1rem;
+}
+
+footer .credit {
+  font-size: 2rem;
+}
+
+footer .credit a {
+  color: #222;
+  font-weight: 700;
+}
+
+.about .row .aboutbtn{
+  margin-top: 3rem;
+  margin-left: 30rem;
+  padding: 1rem 1rem;
+  font-size: 1rem;
+  background-color: var(--primary);
+  color: #f8e4cf;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.about .row .aboutbtn:hover{
+  margin-top: 3rem;
+  margin-left: 30rem;
+  padding: 1rem 1rem;
+  font-size: 1rem;
+  background-color: #f8e4cf;
+  color: var(--primary);
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.menuKami .menubtn{
+  margin-top: 2rem;
+  margin-left: 49rem;
+  padding: 1rem 1rem;
+  font-size: 1rem;
+  background-color: var(--primary);
+  color: #f8e4cf;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+button{
+  position: relative;
+  border: none;
+  transition: .4s ease-in;
+  z-index: 1;
+}
+
+button::before, button::after{
+  position: absolute;
+  content: "";
+  z-index: -1;
+}
+
+.menuKami .menubtn:hover{
+  margin-top: 2rem;
+  margin-left: 49rem;
+  padding: 1rem 1rem;
+  font-size: 1rem;
+  background-color: #f8e4cf;
+  color: var(--primary);
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+/* TAMPILAN LAYAR */
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* Tab */
+@media (max-width: 1024px) {
+  html {
+    font-size: 55%;
+  }
+
+  #menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #fff;
+    width: 25rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0%;
+  }
+
+  .navbar .navbar-nav a {
+    color: var(--bg);
+    display: block;
+    margin: 1rem;
+    padding: 0.3rem;
+    font-size: 1.7rem;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.2);
+  }
+
+  .about .row {
+    flex-wrap: wrap;
+  }
+
+  .about .row .about-img img {
+    height: 21rem;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .about .row .content {
+    padding: 0;
+  }
+
+  .about .row .content p {
+    font-size: 1.3rem;
+  }
+
+  .menuKami p {
+    font-size: 1.3rem;
+  }
+
+  .menuKami .row .menu-card img {
+    border-radius: 50%;
+    width: 60%;
+  }
+
+  .menuKami .row .menu-card-title {
+    font-size: 2rem;
+  }
+
+  .menuKami .row p {
+    font-size: 1.7rem;
+  }
+
+  .contact .row {
+    flex-wrap: wrap;
+  }
+
+  .contact .row .map {
+    height: 30rem;
+  }
+
+  .contact .row form {
+    padding: 0;
+  }
+
+  .contact .row form .btn {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Hp */
+@media (max-width: 450px) {
+  html {
+    font-size: 40%;
+  }
+}

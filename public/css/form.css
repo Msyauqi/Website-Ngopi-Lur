@@ -1,0 +1,85 @@
+body{
+    background-color: #f8e4cf;
+    font-family: "Poppins", sans-serif;
+}
+
+.signUp{
+    width: 360px;
+    height: 420px;
+    margin: auto;
+    background-color: #684725;
+    border-radius: 3px;
+    color: #f8e4cf;
+}
+
+.signIn{
+    width: 360px;
+    height: 280px;
+    margin: auto;
+    border-radius: 3px;
+    background-color: #684725;
+    color: #f8e4cf;
+}
+
+
+
+h1{
+    text-align: center;
+    padding-top: 15px;
+}
+
+h4{
+    text-align: center;
+}
+
+form{
+    width: 300px;
+    margin-left: 20px;
+}
+
+form label{
+    display: flex;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+form input{
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border: 1px solid black;
+    border-radius: 6px;
+    outline: none;
+}
+
+input[type="submit"]{
+    width: 320px;
+    height: 35px;
+    margin-top: 20px;
+    border: none;
+    background-color: #f8e4cf;
+    color: #684725;
+    font-size: 14px;
+}
+
+input[type="submit"]:hover{
+    cursor: pointer;
+}
+
+p{
+    text-align: center;
+    padding-top: 20px;
+    font-size: 15px;
+}
+
+.paragraf{
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    margin-top: -10px;
+}
+
+.paragraf a{
+    color: #684725;
+}
+

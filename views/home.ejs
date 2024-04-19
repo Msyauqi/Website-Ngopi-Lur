@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ngopi Lur</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="css/home.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <a href="#" class="navbar-logo">Ngopi<span>Lur</span></a>
+
+      <div class="navbar-nav">
+        <a href="#home">Home</a>
+
+        <a href="#about">About Us</a>
+
+        <a href="#menuKami">Menu</a>
+
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="navbar-ext">
+        <a href="#" id="search"><i data-feather="search"></i></a>
+        <a href="#" id="shopping-bag"><i data-feather="shopping-bag"></i></a>
+        <a href="#" id="menu"><i data-feather="menu"></i></a>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <!--Home-->
+      <main class="content">
+        <h1>
+          <span class="ngopi">Ngopi</span> <span class="lur">Lur</span>,
+          <span class="kata">Yang Bener Aaajaa</span>
+        </h1>
+        <p>
+            "NgopiLur adalah tempat di mana cerita-cerita bersemi di setiap tegukan kopi. Di antara aroma kopi yang menggoda, kami menciptakan ruang untuk membagikan kisah-kisah hidup. Kami percaya bahwa setiap cangkir kopi adalah peluang untuk merayakan kehidupan, menemukan inspirasi, dan menghubungkan jiwa-jiwa. Di sini, kita tidak hanya menyajikan kopi; kami menawarkan pengalaman yang membangun kenangan.""
+        </p>
+      </main>
+    </section>
+
+    <!-- About Us-->
+    <section id="about" class="about">
+      <h2>About<span>Us</span></h2>
+
+      <div class="row">
+        <div class="about-img">
+          <img src="img/about.jpg" alt="About Us" />
+        </div>
+        <div class="content">
+          <h3>Apa itu NgopiLur?</h3>
+          <p>
+            NgopiLur adalah tempat bersantai yang menawarkan kopi pilihan dan
+            suasana hangat untuk menikmati momen santai bersama teman.
+          </p>
+          <p>
+            kafe yang memanjakan pecinta kopi dengan suasana cozy dan beragam
+            pilihan kopi berkualitas tinggi.
+          </p>
+          <button onclick="goToPageabout()" class="aboutbtn">Read More</button>
+        </div>
+      </div>
+      
+    </section>
+
+    <!--Menu-->
+    <section id="menuKami" class="menuKami">
+      <h2>Our<span>Menu</span></h2>
+      <h5>-Drinks-</h5>
+      <p>
+        Menu Minuman
+      </p>
+
+      <div class="row">
+        <!--Menu 1-->
+        <div class="menu-card">
+          <img
+            src="img/menu/minuman/1.png"
+            alt="Americano"
+            class="menu-card-image"
+          />
+          <h4 class="menu-card-title">Americano</h4>
+          <p>Rp 15.000</p>
+        </div>
+        <!--Menu 2-->
+        <div class="menu-card">
+          <img
+            src="img/menu/minuman/2.png"
+            alt="Espresso"
+            class="menu-card-image"
+          />
+          <h4 class="menu-card-title">Espresso</h4>
+          <p>Rp 25.000</p>
+        </div>
+        <!--Menu 3-->
+        <div class="menu-card">
+          <img
+            src="img/menu/minuman/3.png"
+            alt="Matcha Latte"
+            class="menu-card-image"
+          />
+          <h4 class="menu-card-title">Matcha Latte</h4>
+          <p>Rp 35.000</p>
+        </div>
+        <!--Menu 4-->
+        <div class="menu-card">
+          <img
+            src="img/menu/minuman/4.png"
+            alt="Coffee Milk"
+            class="menu-card-image"
+          />
+          <h4 class="menu-card-title">Coffee Milk</h4>
+          <p>Rp 30.000</p>
+        </div>
+      </div>
+      <button onclick="goToPagemenu()" class="menubtn">See More</button>
+      </div>
+
+    </section>
+    <!--Contact-->
+    <section id="contact" class="contact">
+      <h2>Contact<span>Us</span></h2>
+      <p>
+        Silahkan Hubungi Kami
+      </p>
+
+      <div class="row">
+        <iframe
+          class="map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1667.7744128624302!2d106.78539742681176!3d-6.176464412973509!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f7f1273fb361%3A0x58f910afe87a377d!2sKost%20Tanjung%20Duren%20Gazebo%20House!5e0!3m2!1sen!2sid!4v1712241765801!5m2!1sen!2sid"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+
+        <form action="/contactUs" method="post">
+          <!--Nama-->
+          <div class="input-group">
+            <i data-feather="user"></i>
+            <input type="text" name="namaPengirim" placeholder="nama" />
+          </div>
+          <!--Email-->
+          <div class="input-group">
+            <i data-feather="mail"></i>
+            <input type="text" name="emailPengirim" placeholder="email" />
+          </div>
+          <!--Phone-->
+          <div class="input-group">
+            <i data-feather="send"></i>
+            <input type="text" name="pesanPengirim" placeholder="Pesan" />
+          </div>
+          <!--Submit-->
+          <button class="btn">Submit</button>
+        </form>
+      </div>
+    </section>
+
+    <!--Footer-->
+    <footer>
+      <div class="social">
+        <!--Instagram-->
+        <a href="#">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <!--Tiktok-->
+        <a href="#">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+        <!--WhatsApp-->
+        <a href="#">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+      </div>
+
+      <div class="link">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#menuKami">Menu</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="credit">
+        <p>Created by <a href="#">PaguyubanTeam</a>. | &copy; 2024.</p>
+      </div>
+    </footer>
+    <script>
+      feather.replace();
+    </script>
+
+    <script src="js/home.js"></script>
+  </body>
+</html>
