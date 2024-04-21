@@ -34,6 +34,14 @@ app.get("/register", (req, res) => {
   res.render("registerform.ejs");
 });
 
+app.get("/contactUs", (req, res) => {
+  res.render("contactUs.ejs");
+});
+
+app.get("/events", (req, res) => {
+  res.render("event.ejs");
+});
+
 app.post("/r", async (req,res) => {
   
   const data={
@@ -94,7 +102,7 @@ transpoter.sendMail(mailOptions, function(error, info){
     console.log(error);
   }
   else{
-    res.redirect('/home');
+    res.redirect('/contactUs');
     console.log("email sent" + info.response);
   }
 })

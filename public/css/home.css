@@ -144,15 +144,13 @@ body {
 }
 
 .about,
-.menuKami,
-.contact {
+.menuKami {
   padding: 5rem 6% 1rem;
 }
 
 .about h2,
 .menuKami h2,
-.menuKami h5,
-.contact h2 {
+.menuKami h5 {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 2.7rem;
@@ -171,8 +169,7 @@ body {
 }
 
 .about h2 span,
-.menuKami h2 span,
-.contact h2 span {
+.menuKami h2 span {
   color: #f8e4cf;
 }
 
@@ -206,12 +203,10 @@ body {
   line-height: 1.6;
 }
 
-.menuKami h2,
-.contact h2 {
+.menuKami h2 {
   margin-bottom: 1rem;
 }
-.menuKami p,
-.contact p {
+.menuKami p {
   text-align: center;
   max-width: 28rem;
   margin: auto;
@@ -245,51 +240,6 @@ body {
   font-size: 1.5rem;
 }
 
-.contact .row {
-  display: flex;
-  margin-top: 2rem;
-  background-color: #222;
-}
-
-.contact .row .map {
-  flex: 1 1 45rem;
-  width: 100%;
-  object-fit: cover;
-}
-
-.contact .row form {
-  flex: 1 1 45rem;
-  padding: 3rem 2rem;
-  text-align: center;
-}
-
-.contact .row form .input-group {
-  display: flex;
-  align-items: center;
-  margin-top: 2rem;
-  background-color: var(--bg);
-  border: 1px solid #eee;
-  padding-left: 2rem;
-}
-
-.contact .row form .input-group input {
-  width: 100%;
-  padding: 2rem;
-  font-size: 1.5rem;
-  background: none;
-  color: #fff;
-}
-
-.contact .row form .btn {
-  margin-top: 3rem;
-  display: inline-block;
-  padding: 1rem 3rem;
-  font-size: 1.7rem;
-  background-color: var(--primary);
-  color: #f8e4cf;
-  border-radius: 2rem;
-  cursor: pointer;
-}
 
 footer {
   background-color: var(--primary);
@@ -307,19 +257,6 @@ footer .social a {
   color: #fff;
   margin: 1rem;
   font-size: 2rem;
-}
-
-footer .social a:hover,
-footer .link a:hover {
-  color: #222;
-}
-
-footer .link {
-  margin-bottom: 1rem;
-}
-footer .link a {
-  color: #fff;
-  padding: 0.7rem 1rem;
 }
 
 footer .credit {
@@ -386,111 +323,4 @@ button::before, button::after{
   color: var(--primary);
   border-radius: 2rem;
   cursor: pointer;
-}
-
-/* TAMPILAN LAYAR */
-/* Laptop */
-@media (max-width: 1366px) {
-  html {
-    font-size: 75%;
-  }
-}
-
-/* Tab */
-@media (max-width: 1024px) {
-  html {
-    font-size: 55%;
-  }
-
-  #menu {
-    display: inline-block;
-  }
-
-  .navbar .navbar-nav {
-    position: absolute;
-    top: 100%;
-    right: -100%;
-    background-color: #fff;
-    width: 25rem;
-    height: 100vh;
-    transition: 0.3s;
-  }
-
-  .navbar .navbar-nav.active {
-    right: 0%;
-  }
-
-  .navbar .navbar-nav a {
-    color: var(--bg);
-    display: block;
-    margin: 1rem;
-    padding: 0.3rem;
-    font-size: 1.7rem;
-  }
-
-  .navbar .navbar-nav a::after {
-    transform-origin: 0 0;
-  }
-
-  .navbar .navbar-nav a:hover::after {
-    transform: scaleX(0.2);
-  }
-
-  .about .row {
-    flex-wrap: wrap;
-  }
-
-  .about .row .about-img img {
-    height: 21rem;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  .about .row .content {
-    padding: 0;
-  }
-
-  .about .row .content p {
-    font-size: 1.3rem;
-  }
-
-  .menuKami p {
-    font-size: 1.3rem;
-  }
-
-  .menuKami .row .menu-card img {
-    border-radius: 50%;
-    width: 60%;
-  }
-
-  .menuKami .row .menu-card-title {
-    font-size: 2rem;
-  }
-
-  .menuKami .row p {
-    font-size: 1.7rem;
-  }
-
-  .contact .row {
-    flex-wrap: wrap;
-  }
-
-  .contact .row .map {
-    height: 30rem;
-  }
-
-  .contact .row form {
-    padding: 0;
-  }
-
-  .contact .row form .btn {
-    margin-bottom: 1.5rem;
-  }
-}
-
-/* Hp */
-@media (max-width: 450px) {
-  html {
-    font-size: 40%;
-  }
 }

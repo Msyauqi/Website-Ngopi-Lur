@@ -83,7 +83,6 @@ body {
 }
 
 
-
 button {
   position: relative;
   border: none;
@@ -129,6 +128,7 @@ button::after {
 }
 
 .about h2 {
+  margin-top: 2rem;
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 2.7rem;
