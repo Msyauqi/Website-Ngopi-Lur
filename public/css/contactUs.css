@@ -182,39 +182,6 @@
     font-weight: 700;
   }
   
-  .about .row .aboutbtn{
-    margin-top: 3rem;
-    margin-left: 30rem;
-    padding: 1rem 1rem;
-    font-size: 1rem;
-    background-color: var(--primary);
-    color: #f8e4cf;
-    border-radius: 2rem;
-    cursor: pointer;
-  }
-  
-  .about .row .aboutbtn:hover{
-    margin-top: 3rem;
-    margin-left: 30rem;
-    padding: 1rem 1rem;
-    font-size: 1rem;
-    background-color: #f8e4cf;
-    color: var(--primary);
-    border-radius: 2rem;
-    cursor: pointer;
-  }
-  
-  .menuKami .menubtn{
-    margin-top: 2rem;
-    margin-left: 49rem;
-    padding: 1rem 1rem;
-    font-size: 1rem;
-    background-color: var(--primary);
-    color: #f8e4cf;
-    border-radius: 2rem;
-    cursor: pointer;
-  }
-  
   button{
     position: relative;
     border: none;
@@ -228,13 +195,4 @@
     z-index: -1;
   }
   
-  .menuKami .menubtn:hover{
-    margin-top: 2rem;
-    margin-left: 49rem;
-    padding: 1rem 1rem;
-    font-size: 1rem;
-    background-color: #f8e4cf;
-    color: var(--primary);
-    border-radius: 2rem;
-    cursor: pointer;
-  }
+ 

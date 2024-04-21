@@ -95,32 +95,6 @@ button::after {
   z-index: -1;
 }
 
-.menubtn {
-  width: 8rem;
-  display: block;
-  margin: 0 auto;
-  margin-top: 3rem;
-  padding: 1rem 1rem;
-  font-size: 1rem;
-  background-color: var(--primary);
-  color: #f8e4cf;
-  border-radius: 2rem;
-  cursor: pointer;
-}
-
-.menubtn:hover {
-  width: 8rem;
-  display: block;
-  margin: 0 auto;
-  margin-top: 3rem;
-  padding: 1rem 1rem;
-  font-size: 1rem;
-  background-color: #f8e4cf;
-  color: var(--primary);
-  border-radius: 2rem;
-  cursor: pointer;
-}
-
 .menuKami {
   padding: 5rem 6% 1rem;
 }
