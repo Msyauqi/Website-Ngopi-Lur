@@ -11,7 +11,7 @@
       rel="stylesheet"
     />
     <script src="https://unpkg.com/feather-icons"></script>
-    <link rel="stylesheet" href="css/aboutUs.css" />
+    <link rel="stylesheet" href="css/contactUs.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -28,7 +28,7 @@
 
         <a href="/menu">Menu</a>
 
-        <a href="/contactUs">Contact</a>
+        <a href="/home">Contact</a>
       </div>
 
       <div class="navbar-ext">
@@ -37,40 +37,43 @@
       </div>
     </nav>
 
-    <section id="about" class="about">
-      <h2>About<span>Us</span></h2>
-
-      <div class="row">
-        <div class="about-img">
-          <img src="img/about.jpg" alt="About Us" />
-        </div>
-        <div class="content">
-          <h3>Apa itu NgopiLur?</h3>
-          <p>
-            NgopiLur adalah tempat bersantai yang menawarkan kopi pilihan dan
-            suasana hangat untuk menikmati momen santai bersama teman.
-          </p>
-          <p>
-            kafe yang memanjakan pecinta kopi dengan suasana cozy dan beragam
-            pilihan kopi berkualitas tinggi.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="foto" class="foto">
-        <h2>Tempat<span>Kami</span></h2>
+    <!--Contact-->
+    <section id="contact" class="contact">
+        <h2>Contact<span>Us</span></h2>
+        <p>
+          Silahkan Hubungi Kami
+        </p>
+  
         <div class="row">
-            <img src="img/about/1.jpg" alt="About Us" />
-            <img src="img/about/2.jpg" alt="About Us" />     
-            <img src="img/about/3.jpg" alt="About Us" />       
-            <img src="img/about/4.jpg" alt="About Us" />    
-            <img src="img/about/5.jpg" alt="About Us" />   
-            <img src="img/about/6.jpg" alt="About Us" />   
-            <img src="img/about/7.jpg" alt="About Us" />   
-            <img src="img/about/8.jpg" alt="About Us" />    
+          <iframe
+            class="map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1667.7744128624302!2d106.78539742681176!3d-6.176464412973509!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f7f1273fb361%3A0x58f910afe87a377d!2sKost%20Tanjung%20Duren%20Gazebo%20House!5e0!3m2!1sen!2sid!4v1712241765801!5m2!1sen!2sid"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+  
+          <form action="/contactUs" method="post">
+            <!--Nama-->
+            <div class="input-group">
+              <i data-feather="user"></i>
+              <input type="text" name="namaPengirim" placeholder="nama" />
+            </div>
+            <!--Email-->
+            <div class="input-group">
+              <i data-feather="mail"></i>
+              <input type="text" name="emailPengirim" placeholder="email" />
+            </div>
+            <!--Phone-->
+            <div class="input-group">
+              <i data-feather="send"></i>
+              <input type="text" name="pesanPengirim" placeholder="Pesan" />
+            </div>
+            <!--Submit-->
+            <button class="btn">Submit</button>
+          </form>
         </div>
-    </section>
+      </section>
     
     <!--Footer-->
     <footer>
