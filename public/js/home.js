@@ -21,3 +21,4 @@ function goToPageabout() {
 function goToPagemenu() {
   window.location.href = "/menu";
 }
+
