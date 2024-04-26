@@ -19,9 +19,13 @@ const Form = new mongoose.Schema({
     email:{
         type:String,
         required:true
+    },
+    token:{
+        type:String,
+        required:true
     }
 })
 
-const collection=new mongoose.model("DataPengguna", Form)
+const Collection=new mongoose.model("DataPengguna", Form)
 
-module.exports=collection
+module.exports=Collection
