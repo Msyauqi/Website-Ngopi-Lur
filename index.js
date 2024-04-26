@@ -1,19 +1,42 @@
-const { name } = require("ejs");
 const express = require("express");
 const app = express();
 const port = 3200;
-const collection=require("./mongodb")
+const Collection=require("./mongodb")
 const nodemailer = require('nodemailer');
+const jwt=require("jsonwebtoken")
+const cookieParser=require("cookie-parser")
+const bcryptjs=require("bcryptjs")
 
 
+
+async function hashPass(password){
+  const res=await bcryptjs.hash(password,10)
+  return res
+}
+
+async function compare(userPass, hashPass){
+  const res=await bcryptjs.compare(userPass, hashPass)
+  return res
+}
 
 app.set("view engine", "ejs");
 
 
 app.use(express.static("public"));
+app.use(cookieParser())
 app.use(express.urlencoded({extended:true}))
 
  
+app.get("/", (req, res) => {
+  if(req.cookies.jwt){
+    const verify=jwt.verify(req.cookies.jwt, "helloawdiotpsyhrntkcmanwudhioptmeka")
+    res.redirect("/home")
+  }
+
+  else{
+    res.redirect("/login")
+  }
+})
 app.get("/home", (req, res) => {
   res.render("home.ejs");
 });
@@ -26,7 +49,7 @@ app.get("/menu", (req, res) => {
   res.render("menu.ejs");
 });
 
-app.get("/", (req, res) => {
+app.get("/login", (req, res) => {
   res.render("loginform.ejs");
 });
 
@@ -42,34 +65,61 @@ app.get("/events", (req, res) => {
   res.render("event.ejs");
 });
 
-app.post("/r", async (req,res) => {
+app.post("/r", async(req, res) => {
+  try {
+    const check = await Collection.findOne({name:req.body.name})
   
-  const data={
-    name: req.body.name,
-    password: req.body.password, 
-    email: req.body.email
+        if(check){
+          res.send("user telah digunakan")
+        }
+
+        else{
+          const token=jwt.sign({name:req.body.name}, "helloawdiotpsyhrntkcmanwudhioptmeka")
+          
+          res.cookie("jwt", token, {
+            maxAge:600000,
+            httpOnly:true
+          })
+
+          const data={
+            name:req.body.name,
+            email:req.body.email,
+            password: await hashPass(req.body.password),
+            token:token
+          }
+
+          await Collection.insertMany([data])
+          res.redirect("/home");
+        }
   }
-
-  await collection.insertMany([data])
-
-  res.redirect("/home")
+  catch (error) {
+    console.error(error); // Tampilkan kesalahan di konsol
+    res.send("ada kesalahan: " + error.message);
+  }
 })
 
-app.post("/l", async (req,res) => {
-  
-  try{
-    const check=await collection.findOne({email:req.body.email})
+app.post("/l", async(req, res) => {
+  try {
+    const check = await Collection.findOne({name:req.body.name})
+    const passCheck=await compare(req.body.password,check.password)
+        
+      if(check && passCheck){
 
-    if(check.password===req.body.password){
-      res.redirect("/home")
-    }
-    else{
-      res.send("wrong password")
-    }
+        res.cookie("jwt", check.token, {
+          maxAge:600000,
+          httpOnly:true
+        })
 
+          res.redirect("/home");
+        }
+
+        else{
+          res.send("terdapat kesalahan")
+        }
   }
-  catch{
-    res.send("Data Salah")
+  catch (error) {
+    console.error(error); // Tampilkan kesalahan di konsol
+    res.send("ada kesalahan: " + error.message);
   }
 })
 
