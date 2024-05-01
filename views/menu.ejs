@@ -29,11 +29,19 @@
           <a href="/menu">Menu</a>
   
           <a href="/contactUs">Contact</a>
+
+          <a href="/events">Event</a>
         </div>
 
         <div class="navbar-ext">
-          <a href="#" id="search"><i data-feather="search"></i></a>
+          <a href="#" id="search-button"><i data-feather="search"></i></a>
           <a href="#" id="shopping-bag"><i data-feather="shopping-bag"></i></a>
+        </div>
+
+        <!-- Search Form-->
+        <div class="search-form">
+          <input type="search" id="search-box" placeholder="Search here..." oninput="searchMenu()">
+          <label for="search-box"><i data-feather="search"></i></label>
         </div>
       </nav>
 
@@ -146,6 +154,8 @@
 
     <script>
         feather.replace();
-      </script>
+    </script>
+    
+    <script src="js/menu.js"></script>
 </body>
 </html>
