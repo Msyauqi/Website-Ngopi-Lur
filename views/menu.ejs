@@ -25,17 +25,13 @@
             <a href="#" id="search-button"><i data-feather="search"></i></a>
             <a href="#" id="shopping-cart-button"><i data-feather="shopping-bag"></i></a>
         </div>
+
         <!-- Search Form-->
         <div class="search-form">
             <input type="search" id="search-box" placeholder="Search here..." oninput="searchMenu()">
             <label for="search-box"><i data-feather="search"></i></label>
         </div>
-        <!--Search form end-->
-        <!--Shopping Cart Start-->
-        <div class="shopping-cart">
-            <!-- Shopping cart items will be dynamically added here -->
-        </div>
-        <!--Shopping Cart end-->
+
     </nav>
     <section id="menuKami" class="menuKami">
         <h2>Our<span>Menu</span></h2>
@@ -45,40 +41,24 @@
             <!--Menu 1-->
             <div class="menu-card">
                 <img src="img/menu/minuman/1.png" alt="Americano" class="menu-card-image" />
-                <div class="product-icons">
-                    <a href="#"><i data-feather="shopping-cart"></i></a>
-                    <a href="#" class="item-detail-button"><i data-feather="eye"></i></a>
-                </div>
                 <h4 class="menu-card-title">Americano</h4>
                 <p>Rp 15.000</p>
             </div>
             <!--Menu 2-->
             <div class="menu-card">
                 <img src="img/menu/minuman/2.png" alt="Espresso" class="menu-card-image" />
-                <div class="product-icons">
-                    <a href="#"><i data-feather="shopping-cart"></i></a>
-                    <a href="#"><i data-feather="eye"></i></a>
-                </div>
                 <h4 class="menu-card-title">Espresso</h4>
                 <p>Rp 25.000</p>
             </div>
             <!--Menu 3-->
             <div class="menu-card">
                 <img src="img/menu/minuman/3.png" alt="Matcha Latte" class="menu-card-image" />
-                <div class="product-icons">
-                    <a href="#"><i data-feather="shopping-cart"></i></a>
-                    <a href="#"><i data-feather="eye"></i></a>
-                </div>
                 <h4 class="menu-card-title">Matcha Latte</h4>
                 <p>Rp 35.000</p>
             </div>
             <!--Menu 4-->
             <div class="menu-card">
                 <img src="img/menu/minuman/4.png" alt="Coffee Milk" class="menu-card-image" />
-                <div class="product-icons">
-                    <a href="#"><i data-feather="shopping-cart"></i></a>
-                    <a href="#"><i data-feather="eye"></i></a>
-                </div>
                 <h4 class="menu-card-title">Coffee Milk</h4>
                 <p>Rp 30.000</p>
             </div>
@@ -87,30 +67,18 @@
             <!--Menu 5-->
             <div class="menu-card">
                 <img src="img/menu/Minuman/Vanilla Latte.jpg" alt="Vanilla Latte" class="menu-card-image" />
-                <div class="product-icons">
-                    <a href="#"><i data-feather="shopping-cart"></i></a>
-                    <a href="#"><i data-feather="eye"></i></a>
-                </div>
                 <h4 class="menu-card-title">Vanilla Latte</h4>
                 <p>Rp 200.000</p>
             </div>
             <!--Menu 6-->
             <div class="menu-card">
                 <img src="img/menu/Minuman/coffee-3120757_1280.jpg" alt="Kopi Tubruk" class="menu-card-image" />
-                <div class="product-icons">
-                    <a href="#"><i data-feather="shopping-cart"></i></a>
-                    <a href="#"><i data-feather="eye"></i></a>
-                </div>
                 <h4 class="menu-card-title">Mocha</h4>
                 <p>Rp 200.000</p>
             </div>
             <!--Menu 7-->
             <div class="menu-card">
                 <img src=" img/menu/Minuman/Kopi Tubruk.jpg" alt="Cappuccino" class="menu-card-image" />
-                <div class="product-icons">
-                    <a href="#"><i data-feather="shopping-cart"></i></a>
-                    <a href="#"><i data-feather="eye"></i></a>
-                </div>
                 <h4 class="menu-card-title">Cappuccino</h4>
                 <p>Rp 200.000</p>
             </div>
@@ -136,62 +104,6 @@
             <p>Created by <a href="#">PaguyubanTeam</a>. | &copy; 2024.</p>
         </div>
     </footer>
-    <!--footer end-->
-    <!--modal box item detail start-->
-    <div class="modal" id="item-detail-modal">
-        <div class="modal-container">
-            <a href="#" class="close-icon"><i data-feather="x"></i></a>
-            <div class="modal-content">
-                <img src="img/menu/Minuman/1.png" alt="Americano">
-                <div class="product-content">
-                    <h3>Americano</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi, facere perferendis et consequuntur voluptas doloremque, ipsa aliquid repudiandae libero, ad laboriosam adipisci hic earum illum!</p>
-                    <div class="product-price">IDR 15.000</div>
-                    <a href="#"><i data-feather="shopping-cart"></i><span></span>add to cart</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--modal box item detail end -->
-    <script>
-        // Menangani penambahan item ke dalam keranjang belanja
-        document.addEventListener("DOMContentLoaded", function () {
-            const addToCartButtons = document.querySelectorAll('.menu-card .product-icons a:first-child');
-            const shoppingCart = document.querySelector('.shopping-cart');
-
-            addToCartButtons.forEach(button => {
-                button.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const menuItem = this.parentElement.parentElement;
-                    const itemName = menuItem.querySelector('.menu-card-title').innerText;
-                    const itemPrice = menuItem.querySelector('p').innerText;
-
-                    const newItem = document.createElement('div');
-                    newItem.classList.add('cart-item');
-                    newItem.innerHTML = `
-                        <img src="${menuItem.querySelector('.menu-card-image').src}" alt="${itemName}">
-                        <div class="item-detail">
-                            <h3>${itemName}</h3>
-                            <div class="item-price">${itemPrice}</div>
-                        </div>
-                        <i data-feather="trash-2" class="remove-item"></i>
-                    `;
-                    shoppingCart.appendChild(newItem);
-
-                    // Menambah event listener untuk tombol hapus
-                    const removeButtons = document.querySelectorAll('.remove-item');
-                    removeButtons.forEach(removeButton => {
-                        removeButton.addEventListener('click', function () {
-                            const itemToRemove = this.parentElement;
-                            itemToRemove.remove();
-                        });
-                    });
-
-                    feather.replace(); // Menyegarkan icon
-                });
-            });
-        });
-    </script>
     <script>
         feather.replace();
     </script>
