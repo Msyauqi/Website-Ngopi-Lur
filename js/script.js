@@ -5,6 +5,8 @@ document.querySelector("#menu").onclick = () => {
   navbarNav.classList.toggle("active");
 };
 
+
+
 //menghilangkan menu
 const menunya = document.querySelector('#menu');
 
