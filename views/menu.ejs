@@ -10,9 +10,11 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <link rel="stylesheet" href="css/menu.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="js/menuApp.js"></script>
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="navbar" x-data>
         <a href="#" class="navbar-logo">Ngopi<span>Lur</span></a>
         <div class="navbar-nav">
             <a href="/home">Home</a>
@@ -23,7 +25,10 @@
         </div>
         <div class="navbar-ext">
             <a href="#" id="search-button"><i data-feather="search"></i></a>
-            <a href="#" id="shopping-cart-button"><i data-feather="shopping-bag"></i></a>
+            <a href="#" id="shopping-cart-button">
+                <i data-feather="shopping-cart"></i>
+                <span class="notifItem" x-show="$store.cart.quantity" x-text="$store.cart.quantity"></span>
+            </a>
         </div>
 
         <!-- Search Form-->
@@ -32,71 +37,58 @@
             <label for="search-box"><i data-feather="search"></i></label>
         </div>
 
+        <!--shooping cart-->
+    <div class="shopping-cart">
+        <template x-for="(item, menu) in $store.cart.items" x-keys="menu">
+        <div class="cart-item">
+            <img :src="`img/menu/minuman/${item.img}`" :alt="item.name">
+            <div class="item-detail">
+                <h3 x-text="item.name"></h3>
+
+                <div class="item-price">
+                    <span x-text="rupiah(item.price)"></span> &times;
+                    <button id="remove" @click="$store.cart.remove(item.id)">&minus;</button>
+                    <span x-text="item.quantity"></span>
+                    <button id="add" @click="$store.cart.add(item)">&plus;</button > &equals;
+                    <span x-text=" rupiah(item.total)"></span>
+                </div> 
+            </div>
+        </div>
+        </template>
+        <h4 x-show="!$store.cart.items.length" style="margin-top: 1rem;">Keranjang Kosong</h4>
+        <h4 x-show="$store.cart.items.length"> Total: <span x-text="rupiah($store.cart.total)"></span></h4>
+    </div>
     </nav>
-    <section id="menuKami" class="menuKami">
+    
+    <section id="menuKami" class="menuKami" x-data="products">
         <h2>Our<span>Menu</span></h2>
         <h5>-Drinks-</h5>
         <p>Menu Minuman</p>
         <div class="row">
-            <!--Menu 1-->
-            <div class="menu-card">
-                <img src="img/menu/minuman/1.png" alt="Americano" class="menu-card-image" />
-                <h4 class="menu-card-title">Americano</h4>
-                <p>Rp 15.000</p>
-            </div>
-            <!--Menu 2-->
-            <div class="menu-card">
-                <img src="img/menu/minuman/2.png" alt="Espresso" class="menu-card-image" />
-                <h4 class="menu-card-title">Espresso</h4>
-                <p>Rp 25.000</p>
-            </div>
-            <!--Menu 3-->
-            <div class="menu-card">
-                <img src="img/menu/minuman/3.png" alt="Matcha Latte" class="menu-card-image" />
-                <h4 class="menu-card-title">Matcha Latte</h4>
-                <p>Rp 35.000</p>
-            </div>
-            <!--Menu 4-->
-            <div class="menu-card">
-                <img src="img/menu/minuman/4.png" alt="Coffee Milk" class="menu-card-image" />
-                <h4 class="menu-card-title">Coffee Milk</h4>
-                <p>Rp 30.000</p>
-            </div>
-        </div>
-        <div class="row">
-            <!--Menu 5-->
-            <div class="menu-card">
-                <img src="img/menu/Minuman/Vanilla Latte.jpg" alt="Vanilla Latte" class="menu-card-image" />
-                <h4 class="menu-card-title">Vanilla Latte</h4>
-                <p>Rp 200.000</p>
-            </div>
-            <!--Menu 6-->
-            <div class="menu-card">
-                <img src="img/menu/Minuman/coffee-3120757_1280.jpg" alt="Kopi Tubruk" class="menu-card-image" />
-                <h4 class="menu-card-title">Mocha</h4>
-                <p>Rp 200.000</p>
-            </div>
-            <!--Menu 7-->
-            <div class="menu-card">
-                <img src=" img/menu/Minuman/Kopi Tubruk.jpg" alt="Cappuccino" class="menu-card-image" />
-                <h4 class="menu-card-title">Cappuccino</h4>
-                <p>Rp 200.000</p>
-            </div>
+            <template x-for="(item, menu) in items" x-key="menu">
+                <!--Menu 1-->
+                <div class="menu-card">
+                <img :src="`img/menu/minuman/${item.img}`" :alt="item.name" class="menu-card-image" @click="$store.cart.add(item)"/>
+                <h4 x-text="item.name" class="menu-card-title">Americano</h4>
+                <p x-text="rupiah(item.price)"></p>
+                </div>
+            </template>
         </div>
     </section>
+
     <!--Footer-->
     <footer>
         <div class="social">
             <!--Instagram-->
-            <a href="#">
+            <a href="https://www.instagram.com">
                 <i class="fa-brands fa-instagram"></i>
             </a>
             <!--Tiktok-->
-            <a href="#">
+            <a href="https://www.tiktok.com">
                 <i class="fa-brands fa-tiktok"></i>
             </a>
             <!--WhatsApp-->
-            <a href="#">
+            <a href="https://wa.me">
                 <i class="fa-brands fa-whatsapp"></i>
             </a>
         </div>
