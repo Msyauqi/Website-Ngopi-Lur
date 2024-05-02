@@ -44,8 +44,32 @@ body {
   color: var(--primary);
 }
 
+.navbar .navbar-nav a {
+  color: white;
+  display: inline-block;
+  font-size: 1.3rem;
+  margin: 0 1rem;
+}
+
 .navbar .navbar-ext {
   padding-right: 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.2rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
 }
 
 .navbar .navbar-ext a {
@@ -55,6 +79,40 @@ body {
 
 .navbar .navbar-ext a:hover {
   color: var(--primary);
+}
+
+/* navbar search form */
+.navbar .search-form {
+  position: absolute;
+  top: 100%;
+  right: 3%;
+  background-color: white;
+  width: 50rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: 0.3s;
+}
+
+.navbar .search-form.active{
+  transform: scaleY(1);
+}
+
+.navbar .search-form input{
+  height: 100%;
+  width: 100%;
+  font-size: 1.4rem;
+  color: var(--bg);
+  padding: 1rem;
+}
+
+.navbar .searchForm label{
+  cursor: pointer;
+  font-size: 2rem;
+  margin-right: 1.5rem;
+  color: var(--bg);
 }
 
 button {
@@ -69,32 +127,6 @@ button::after {
   position: absolute;
   content: "";
   z-index: -1;
-}
-
-.menubtn {
-  width: 8rem;
-  display: block;
-  margin: 0 auto;
-  margin-top: 3rem;
-  padding: 1rem 1rem;
-  font-size: 1rem;
-  background-color: var(--primary);
-  color: #f8e4cf;
-  border-radius: 2rem;
-  cursor: pointer;
-}
-
-.menubtn:hover {
-  width: 8rem;
-  display: block;
-  margin: 0 auto;
-  margin-top: 3rem;
-  padding: 1rem 1rem;
-  font-size: 1rem;
-  background-color: #f8e4cf;
-  color: var(--primary);
-  border-radius: 2rem;
-  cursor: pointer;
 }
 
 .menuKami {
