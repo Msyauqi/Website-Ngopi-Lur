@@ -276,6 +276,36 @@
     color: red;
   }
 
+  footer {
+    background-color: var(--primary);
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    padding-bottom: 3.5rem;
+  }
+  
+  footer .social {
+    padding: 1rem 0;
+  }
+  
+  footer .social a {
+    color: #fff;
+    margin: 1rem;
+    font-size: 2rem;
+  }
+  
+  footer .social a:hover {
+    color: #222;
+  }
+  
+  footer .credit {
+    font-size: 2rem;
+  }
+  
+  footer .credit a {
+    color: #222;
+    font-weight: 700;
+  }
   
 
   
