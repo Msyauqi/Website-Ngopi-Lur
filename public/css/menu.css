@@ -174,6 +174,61 @@ body {
   text-align: center;
 }
 
+/* Checkout */
+.form-checkout{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-top: 1px dashed black;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.form-checkout h5{
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.form-checkout form{
+  text-align: center;
+  width: 100%;
+}
+
+.form-checkout label {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.form-checkout span {
+  text-align: right;
+}
+
+.form-checkout input {
+  background-color: rgb(197, 197, 197);
+  padding: 5px;
+  font-size: 1.2rem;
+  width: 70%;
+}
+
+.form-checkout .checkout-button {
+  padding: 10px 18px;
+  background-color: var(--primary);
+  color: #f8e4cf;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  margin: 1rem auto;
+  cursor: pointer;
+}
+
+.form-checkout .checkout-button.disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+/* navbar */
 .navbar .search-form input{
   height: 100%;
   width: 100%;
