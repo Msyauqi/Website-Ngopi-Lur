@@ -6,7 +6,7 @@ const nodemailer = require('nodemailer');
 const jwt=require("jsonwebtoken")
 const cookieParser=require("cookie-parser")
 const bcryptjs=require("bcryptjs")
-
+const handlePlaceOrder = require("./midtrans/placeOrder");
 
 
 async function hashPass(password){
@@ -23,9 +23,11 @@ app.set("view engine", "ejs");
 
 
 app.use(express.static("public"));
-app.use(cookieParser())
+app.use(cookieParser());
+app.use(express.json());
 app.use(express.urlencoded({extended:true}))
 
+app.post("/placeOrder", handlePlaceOrder);
  
 app.get("/", (req, res) => {
   if(req.cookies.jwt){
