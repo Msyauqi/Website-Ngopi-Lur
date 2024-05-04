@@ -1,4 +1,5 @@
 document.addEventListener('alpine:init', () => {
+    // Mendefinisikan data produk menggunakan Alpine.js
     Alpine.data('products', () => ({
         items: [
             { id: 1, name: 'Americano', img: '1.png', price: 15000},

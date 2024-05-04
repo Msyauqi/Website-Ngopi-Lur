@@ -14,11 +14,3 @@ document.addEventListener("click", function (e) {
   }
 });
 
-function goToPageabout() {
-  window.location.href = "/aboutUs";
-}
-
-function goToPagemenu() {
-  window.location.href = "/menu";
-}
-

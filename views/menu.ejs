@@ -16,6 +16,7 @@
       data-client-key="SB-Mid-client-ERtUpaHmVYxJNUeJ"></script>
 </head>
 <body>
+    <!--membuat navbar-->
     <nav class="navbar" x-data>
         <a href="#" class="navbar-logo">Ngopi<span>Lur</span></a>
         <div class="navbar-nav">
@@ -47,6 +48,7 @@
             <div class="item-detail">
                 <h3 x-text="item.name"></h3>
 
+                <!--membuat tombol + dan - untuk menambah/mengurang item dan menyesuaikan harganya-->
                 <div class="item-price">
                     <span x-text="rupiah(item.price)"></span> &times;
                     <button id="remove" @click="$store.cart.remove(item.id)">&minus;</button>
@@ -57,13 +59,21 @@
             </div>
         </div>
         </template>
+        <!--ketika keranjang kosong-->
         <h4 x-show="!$store.cart.items.length" style="margin-top: 1rem;">Keranjang Kosong</h4>
+        <!--ketika keranjang ada isinya-->
         <h4 x-show="$store.cart.items.length"> Total: <span x-text="rupiah($store.cart.total)"></span></h4>
 
+        <!-- Menampilkan formulir checkout jika jumlah item dalam keranjang tidak kosong -->
         <div class="form-checkout" x-show="$store.cart.items.length">
+            <!-- Formulir untuk proses checkout -->
             <form action="" id="checkoutForm">
+                <!-- Input tersembunyi untuk menyimpan item keranjang dalam bentuk JSON -->
                 <input type="hidden" name="items" x-model="JSON.stringify($store.cart.items)">
+                <!-- Input tersembunyi untuk menyimpan total belanja -->
                 <input type="hidden" name="total" x-model="$store.cart.total">
+                
+                <!--tempat customer mengisi data-->
                 <h5>Customer Detail</h5>
 
                 <label for="name">
@@ -80,17 +90,20 @@
                     <span>Phone</span>
                     <input type="number" name="phone" id="phone" autocomplete="off">
                 </label>
-
+                <!--tombol untuk proses pembayaran-->
                 <button class="checkout-button disabled" type="button" id="checkout-button" value="checkout">Bayar Pesanan</button>
             </form>
         </div>
     </div>
     </nav>
     
+    <!--untuk menampilkan menu-->
     <section id="menuKami" class="menuKami" x-data="products">
         <h2>Our<span>Menu</span></h2>
         <h5>-Drinks-</h5>
         <p>Menu Minuman</p>
+        
+        <!--baris untuk menampilkan daftar menu-->
         <div class="row">
             <template x-for="(item, menu) in items" x-key="menu">
                 <!--Menu 1-->

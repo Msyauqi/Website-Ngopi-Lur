@@ -8,12 +8,13 @@ const cookieParser=require("cookie-parser")
 const bcryptjs=require("bcryptjs")
 const handlePlaceOrder = require("./midtrans/placeOrder");
 
-
+//untuk menghas password
 async function hashPass(password){
   const res=await bcryptjs.hash(password,10)
   return res
 }
 
+// Fungsi untuk membandingkan password yang di-hash dengan password yang diberikan oleh pengguna
 async function compare(userPass, hashPass){
   const res=await bcryptjs.compare(userPass, hashPass)
   return res
@@ -27,10 +28,14 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))
 
+// Endpoint untuk menangani permintaan pembuatan pesanan
 app.post("/placeOrder", handlePlaceOrder);
- 
+
+// Endpoint untuk halaman beranda
 app.get("/", (req, res) => {
+   // Memeriksa apakah pengguna telah login menggunakan token JWT yang disimpan di cookie
   if(req.cookies.jwt){
+    // Memverifikasi token JWT
     const verify=jwt.verify(req.cookies.jwt, "helloawdiotpsyhrntkcmanwudhioptmeka")
     res.redirect("/home")
   }
@@ -67,8 +72,10 @@ app.get("/events", (req, res) => {
   res.render("event.ejs");
 });
 
+// Endpoint untuk memproses registrasi pengguna baru
 app.post("/r", async(req, res) => {
   try {
+    // Memeriksa apakah nama pengguna sudah digunakan sebelumnya
     const check = await Collection.findOne({name:req.body.name})
   
         if(check){
@@ -76,20 +83,24 @@ app.post("/r", async(req, res) => {
         }
 
         else{
+          // Jika nama pengguna belum penah digunakan(user baru), maka membuat token JWT
           const token=jwt.sign({name:req.body.name}, "helloawdiotpsyhrntkcmanwudhioptmeka")
           
+          // Menyimpan token JWT dalam cookie
           res.cookie("jwt", token, {
             maxAge:600000,
             httpOnly:true
           })
 
+          // Membuat objek data pengguna baru
           const data={
             name:req.body.name,
             email:req.body.email,
             password: await hashPass(req.body.password),
             token:token
           }
-
+          
+          // Menyimpan data pengguna baru ke dalam database
           await Collection.insertMany([data])
           res.redirect("/home");
         }
@@ -100,13 +111,16 @@ app.post("/r", async(req, res) => {
   }
 })
 
+// Endpoint untuk memproses login pengguna
 app.post("/l", async(req, res) => {
   try {
+    // Memeriksa apakah pengguna terdaftar dalam database
     const check = await Collection.findOne({name:req.body.name})
+    // Memeriksa apakah password yang dimasukkan oleh pengguna cocok dengan password yang tersimpan dalam database
     const passCheck=await compare(req.body.password,check.password)
         
       if(check && passCheck){
-
+        // Jika pengguna terdaftar dan password cocok, membuat cookie JWT
         res.cookie("jwt", check.token, {
           maxAge:600000,
           httpOnly:true
@@ -125,7 +139,9 @@ app.post("/l", async(req, res) => {
   }
 })
 
+// Endpoint untuk memproses pengiriman pesan dari halaman kontak
 app.post("/contactUs", function(req, res){
+  // Membuat output email dengan informasi yang diberikan oleh pengguna
   const output = `
   <h3> Informasi </h3
   <ul>
@@ -135,6 +151,7 @@ app.post("/contactUs", function(req, res){
   <h3>Pesan</h3>
   <p>${req.body.pesanPengirim}</p>`
 
+// Konfigurasi transporter untuk pengiriman email
 var transpoter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -143,13 +160,15 @@ var transpoter = nodemailer.createTransport({
   }
 })
 
+// Konfigurasi transporter untuk pengiriman email
 var mailOptions = {
   to: 'muhammad.535220221@stu.untar.ac.id',
   subject: 'Pesan baru',
   html: output
 };
-
+// Mengirim email menggunakan transporter yang telah dikonfigurasi sebelumnya
 transpoter.sendMail(mailOptions, function(error, info){
+  // Callback untuk menangani respons dari pengiriman email
   if(error){
     console.log(error);
   }
@@ -157,8 +176,8 @@ transpoter.sendMail(mailOptions, function(error, info){
     res.redirect('/contactUs');
     console.log("email sent" + info.response);
   }
-})
-})
+});
+}); // Penutup dari penanganan endpoint "/contactUs"
 
 app.listen(port, () => {
   console.log(`server berjalan ${port}`);
